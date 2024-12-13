@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaya Vivek Reddy B Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #cbe8f9, #ffffff);
+            color: #333333;
+            overflow-x: hidden;
+            transition: background 0.5s ease-in-out;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: white;
+            height: 100vh;
+            background: linear-gradient(90deg, rgba(33, 150, 243, 1) 0%, rgba(63, 81, 181, 1) 100%);
+            overflow: hidden;
+            transition: background 0.5s ease-in-out;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            animation: fadeInDown 2s;
+            position: relative;
+            z-index: 2;
+        }
+
+        header p {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            animation: fadeIn 2.5s;
+            position: relative;
+            z-index: 2;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center/cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        header .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        header .floating-elements span {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        header .floating-elements span:nth-child(odd) {
+            animation-duration: 8s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-20px) scale(1.2);
+            }
+            100% {
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background-color: rgba(33, 150, 243, 0.8);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #cbe8f9;
+        }
+
+        section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            transition: background 0.5s ease-in-out;
+        }
+
+        #about {
+            text-align: center;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1.5s;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #projects {
+            background-color: #ffffff;
+        }
+
+        #projects h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        #projects .project {
+            background-color: #263238;
+            color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1.8s;
+            margin-bottom: 2rem;
+        }
+
+        #projects .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #projects .project h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: #81d4fa;
+        }
+
+        #projects .project p {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        #projects .view-project {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(90deg, #007BFF, #0056b3);
+            color: #ffffff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #projects .view-project:hover {
+            background: linear-gradient(90deg, #0056b3, #003366);
+        }
+
+        #contact {
+            text-align: center;
+            background-color: #e3f2fd;
+            border-radius: 10px;
+            padding: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #0d47a1;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectLinks = document.querySelectorAll('.view-project');
+            projectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open(e.target.href, '_blank');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Jaya Vivek Reddy B</h1>
+        <p>Pursuing MBA in Canada | Leveraging Technology to Solve Real-World Problems</p>
+        <div class="floating-elements">
+            <span style="top: 10%; left: 15%; animation-delay: 0s;"></span>
+            <span style="top: 20%; left: 70%; animation-delay: 2s;"></span>
+            <span style="top: 50%; left: 40%; animation-delay: 4s;"></span>
+            <span style="top: 80%; left: 20%; animation-delay: 6s;"></span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I'm Jaya Vivek Reddy B, currently pursuing my MBA in Canada. I have a strong
+            interest in leveraging technology to solve real-world problems. This portfolio
+            showcases my projects and the skills I have developed through my academic and
+            professional journey.
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Data Analyst Project 1</h3>
+            <p>This project showcases my skills in data analysis, visualization, and insights generation. Click the link below to explore the full portfolio.</p>
+            <a href="https://jayavivekreddy.github.io/data-analyst-jaya/" target="_blank" class="view-project">View Project</a>
+        </div>
+        <div class="project">
+            <h3>Data Analyst Project 2</h3>
+            <p>This project further demonstrates my capabilities in data analysis with advanced techniques and tools. Click the link below to explore the full portfolio.</p>
+            <a href="https://jayavivekreddy.github.io/data-analyst-Jaya1/" target="_blank" class="view-project">View Project</a>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me on <a href="mailto:jayavivek123@gmail.com">jayavivek123@gmail.com</a>.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Jaya Vivek Reddy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
